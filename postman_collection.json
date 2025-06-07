@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Inventory Management API",
+    "_postman_id": "unique-id",
+    "description": "Postman collection for Inventory Management Tool Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Product A\",\n  \"type\": \"Electronics\",\n  \"sku\": \"SKU123\",\n  \"image_url\": \"http://example.com/image.jpg\",\n  \"description\": \"Sample product\",\n  \"quantity\": 10,\n  \"price\": 99.99\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Product Quantity",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"quantity\": 15\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/products/{{product_id}}/quantity",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["products", "{{product_id}}", "quantity"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/products?page=1",
+          "protocol": "http
+::contentReference[oaicite:0]{index=0}
+ 
